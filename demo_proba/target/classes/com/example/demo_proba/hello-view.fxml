@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="548.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo_proba.HelloController">
+          <children>
+              <Label layoutX="13.0" layoutY="6.0" text="Тип тренеровки" />
+              <ChoiceBox fx:id="typeColumn" layoutX="15.0" layoutY="23.0" prefHeight="25.0" prefWidth="225.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="23.0" />
+              <Label layoutX="14.0" layoutY="48.0" text="Дата" />
+              <Label layoutX="15.0" layoutY="90.0" text="Время (формат ввода 16:00)" />
+              <Label layoutX="13.0" layoutY="132.0" text="Продолжительность" />
+              <DatePicker fx:id="dataColumn" editable="false" layoutX="15.0" layoutY="65.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="65.0" />
+              <TextField fx:id="timeColumn" layoutX="14.0" layoutY="107.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="107.0" />
+              <TextField fx:id="durationColumn" layoutX="14.0" layoutY="149.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="149.0" />
+              <Label layoutX="12.0" layoutY="174.0" text="Описание" />
+              <TextField fx:id="descriptionColumn" layoutX="12.0" layoutY="191.0" prefHeight="25.0" prefWidth="347.0" AnchorPane.leftAnchor="12.0" AnchorPane.topAnchor="191.0" />
+              <Button fx:id="addB" layoutX="15.0" layoutY="229.0" mnemonicParsing="false" onAction="#addTraining" text="Добавить" AnchorPane.leftAnchor="15.0" />
+            <TableView fx:id="trainingTable" layoutX="15.0" layoutY="261.0" prefHeight="200.0" prefWidth="547.0" AnchorPane.bottomAnchor="87.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="38.0" AnchorPane.topAnchor="261.0">
+              <columns>
+                  <TableColumn fx:id="typeCol" prefWidth="103.0" text="Тип тренировки" />
+                  <TableColumn fx:id="dateCol" prefWidth="85.0" text="Дата" />
+                  <TableColumn fx:id="timeCol" prefWidth="50.0" text="Время" />
+                  <TableColumn fx:id="durationCol" prefWidth="138.0" text="Продолжительность" />
+                  <TableColumn fx:id="descriptionCol" prefWidth="105.0" text="Описание" />
+              </columns>
+            </TableView>
+            <Button fx:id="saveB" disable="true" layoutX="93.0" layoutY="229.0" mnemonicParsing="false" onAction="#saveTrainingToFile" text=" Сохранить изменения" />
+            <Button fx:id="deleteB" layoutX="240.0" layoutY="229.0" mnemonicParsing="false" onAction="#deleteTraining" text="Удалить" />
+            <MenuButton layoutX="310.0" layoutY="229.0" mnemonicParsing="false" text="Сортировка">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#sortByDate" text="По дате" />
+                <MenuItem mnemonicParsing="false" onAction="#sortByType" text="По типу тренировки" />
+              </items>
+            </MenuButton>
+            <Button fx:id="editB" layoutX="418.0" layoutY="229.0" mnemonicParsing="false" onAction="#editTraining" text="Редактировать" />
+            <ToggleButton fx:id="themeSwitcher" layoutX="431.0" layoutY="23.0" mnemonicParsing="false" onAction="#switchTheme" text="Переключить тему" AnchorPane.rightAnchor="49.0" AnchorPane.topAnchor="23.0" />
+          </children>
+</AnchorPane>
